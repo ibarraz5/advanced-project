@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Project</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    rel="stylesheet"  crossorigin="anonymous">
+
+<!--     <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.tw.css"> -->
+
+<style>
+        div#chats{
+        min-height: 300px;
+    }
+    body{
+        margin-left: 20px;
+        margin-top: 30px;      
+        background: url('dark.jpg');
+     background-size: 100% 100%;
+    }
+    .chat-section{
+        display:none;
+    }
+    #noMsgErr{
+        display: none;
+    }
+    h1,h2{
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div id="userRegistration">
+            <h2>Register With Name First!</h2>
+
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="well">
+                        <label>Enter username:</label>
+                        <input type="text" class="form-control" placeholder="Enter user name" id="registeredUser" 
+                        onkeydown="if(event.keyCode == 13) {$('#regUserSubmitBtn').click();}"/>
+                        <br>
+                        <button type="button" class="btn btn-default btn-success" id="regUserSubmitBtn"> SUBMIT </button>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="chat-section">
+            <h1 class="text-center">Welcome to WebSocket Chat</h1>
+            <div class="row">
+                <div class="col-md-3 col-md-offset-0" id="onlineUsersSection">
+                    <div class="well">
+                        <label>Online Users:</label>
+                        <ul id="users"></ul>
+                    </div>
+                </div>
+
+                <div class="col-md-8 chatDiv">
+                    <div id="chats"></div>
+
+                    <div class="well" id="typeMsgSection">
+                        <label for="Chats" class="peopleTyping">Type Message: </label>
+                    <br/>
+                    <input type="text" placeholder="enter message" id="sentMessage" class="form-control"
+                    onkeydown="if(event.keyCode == 13) {$('#hitSend').click();}"></input>
+                    <br/>
+                    
+                    <div class="alert alert-danger" id="noMsgErr">
+                        <p>Blank Messages are not accepted</p>
+                    </div>
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-md-10">
+                            <button class="btn btn-block btn-primary" id="hitSend">Send</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-warning" id="clearChat">Clear Chat</button>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script src="script.js" type="text/javascript"></script>
+
+<!-- <script type="text/javascript" src="js.jquery.emojipicker.js"></script>
+<script type="text/javascript" src="js.jquery.emoji.js"></script> -->
+
+</html>
