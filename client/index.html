@@ -6,11 +6,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     rel="stylesheet"  crossorigin="anonymous">
 
-<!--     <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.css">
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.tw.css"> -->
 
 <style>
         div#chats{
@@ -43,8 +38,8 @@
             <div class="row">
                 <div class="col-md-11">
                     <div class="well">
-                        <label>Enter username:</label>
-                        <input type="text" class="form-control" placeholder="Enter user name" id="registeredUser" 
+                        <label>Enter name:</label>
+                        <input type="text" class="form-control" placeholder="Enter name" id="registeredUser" 
                         onkeydown="if(event.keyCode == 13) {$('#regUserSubmitBtn').click();}"/>
                         <br>
                         <button type="button" class="btn btn-default btn-success" id="regUserSubmitBtn"> SUBMIT </button>
@@ -58,7 +53,7 @@
             <div class="row">
                 <div class="col-md-3 col-md-offset-0" id="onlineUsersSection">
                     <div class="well">
-                        <label>Online Users:</label>
+                        <label>Chat Users:</label>
                         <ul id="users"></ul>
                     </div>
                 </div>
@@ -74,7 +69,7 @@
                     <br/>
                     
                     <div class="alert alert-danger" id="noMsgErr">
-                        <p>Blank Messages are not accepted</p>
+                        <p>Empty Messages can't be sent!</p>
                     </div>
                     <br/>
 
@@ -99,7 +94,5 @@
 
 <script src="script.js" type="text/javascript"></script>
 
-<!-- <script type="text/javascript" src="js.jquery.emojipicker.js"></script>
-<script type="text/javascript" src="js.jquery.emoji.js"></script> -->
 
 </html>
