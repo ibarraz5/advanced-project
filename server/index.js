@@ -14,18 +14,7 @@ const typingUsers= []
 const allClients= []
 const messages = []
 
-/* function broadcastNewMessage(){
-    allClients.forEach(client => {
-        if(client.readyState === WebSocket.OPEN) {
-            client.send(JSON.stringify({
-                event: 'newMessage',
-                data: {
-                    user, msg
-                }
-            }))
-        }
-    })
-} */
+
 
 function broadcastNewMessage(user, msg){
     allClients.forEach(client => {
@@ -52,19 +41,7 @@ function broadcastTypingUsers(){
         }
     })
 }
-/* function updateAllUsers(){
-    allClients.forEach(client => {
-        if(client.readyState == WebSocket.OPEN) {
-            client.send(JSON.stringify({
-                event: 'all-Users',
-                data: allClients.map(userWS => ({
-                    status: userWS.info.onlineStatus,
-                    user: userWS.info.user
-                }))
-            }))
-        }
-    })
-} */
+
 function updateAllUsers(){
     allClients.forEach(client => {
         if(client.readyState === WebSocket.OPEN) {
@@ -91,23 +68,21 @@ wss.on('connection', function(ws){
             switch(event){
                 case 'addTypingUsers': {
                     typingUsers.push(ws)
-/*                     broadcastTypingUsers()
- */                    break 
+                  
+                    broadcastTypingUsers()    
+                    break 
                 }
                 case 'removeTypingUsers': {
                     const user= typingUsers.findIndex(user => user === ws)
                     if(user !== -1){
                         typingUsers.splice(user, 1)
                     }
-/*                     broadcastTypingUsers()
- */                    break
+                    
+                        broadcastTypingUsers()
+                        break
                 }
                 case 'oldMessage': {
-/*                     messages.push({
-                        contents: data.msg,
-                        user: ws.info.user
-                    })
-                    broadcastNewMessage(ws.info.user, data.msg ) */
+
                     messages.push({
                         contents: data.msg,
                         user: ws.info.user
@@ -116,19 +91,17 @@ wss.on('connection', function(ws){
                     break
                 }
                 case 'thisUser': {
-/*                     ws.info= data
-                    allClients.push(ws)
-                    updateAllUsers() */
+
                     ws.info = data
                     allClients.push(ws)
-                    updateAllUsers(ws)
+                    updateAllUsers()
 
                     break
                 }
                 case 'updateUserStatus': {
-/*                     ws.info.onlineStatus=  data
-                    updateAllUsers() */
+
                     ws.info.onlineStatus = data
+                    updateAllUsers()
                     break
                 }
                     
