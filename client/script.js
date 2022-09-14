@@ -102,12 +102,7 @@ $(document).ready(function(){
         $registeredUser.val('')
         $userRegistration.fadeOut('slow', function(){
             $('.chat-section').fadeIn('slow')
-/*             $sentMessage.emojiPicker({
-                position: 'right'
-            }) */
 
-/*              var $emojiPickerDiv = $('#typeMsgSection > div') [0]
-            $emojiPickerDiv.style.width= '100%' */
 
             $sentMessage[0].style.width= '100%'
             $sentMessage[0].style.display= 'flex'
@@ -198,8 +193,4 @@ $(document).ready(function(){
             $('.peopleTyping').text('Type Message: ' +cnt+ ' people are typing...')
         }
     })
-
-
-
-
 }) 
