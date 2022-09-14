@@ -3,7 +3,7 @@
 
 How to run the application
 
-check for local open port
+-check for local open port
     run cmd prompt as admin
     netstat -ab
     if port says LISTENING, it is an open port to use
