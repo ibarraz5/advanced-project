@@ -3,11 +3,11 @@
 
 How to run the application
 
-###check for local open port
+### check for local open port
     run cmd prompt as admin
     netstat -ab
     if port says LISTENING, it is an open port to use
-###open new terminal
+### open new terminal
     cd server/
             install package.json and websocket
             npm init -y
