@@ -7,14 +7,38 @@
     <h2>Group Websocket</h2>
     <p>Group members: Jessica Lee(jlee514), Ivan Barraza-Duran(ibarraz5), Daryl Susilo(dsusilo), Hunter Borkowski(hborkows)</p>
     <h3>Summary of the History</h3>
-    <p>Websockets were first developed in </p>
+    <p>	The Web was first created using HTTP protocol. Back then, there were only 4 steps in the interaction 
+	between the user and the web. It included, opening the connection, sending a request, receiving a 
+	response and closing the connection. The most notable background communication feature was first 
+	seen in 1999 with the Microsoft XMLHTTP. This object made it possible to send a request to a server and 
+	receive a response without having to reload the page. Allowing the user’s experience to be 
+	uninterrupted. However, the high frequency request-response cycles led to more problems as the cycles 
+	required new connections all the time.</p>
+	<p>XMLHTTP became XMLHttpRequest as it gets adopted by other 
+	browsers than Internet Explorer and was used to solve the request-response cycle problem. 
+	Developers decided to modify and test different techniques with XMLHttpRequest that would recreate real-time back and forth 
+	communication of the web and server. Long-polling was the most popular of these techniques involving 
+	opening an XMLHttpRequest connection to the server and only closing the connection once 
+	communication is no longer needed. However, even the Long Polling technique was not enough as it 
+	still used the same setup and frequent request-response cycles similar to XMLHttpRequest as it is trying 
+	to repurpose something it wasn’t designed to do. A solution with proper TCP/IP style capabilities in a 
+	web environment was needed. </p> <p>In 2008, Michael Carter and Ian Hickson created a new standard for web 
+	communication through the collaboration on IRC and M3C mailing lists called WebSockets. The 
+	communication made by WebSockets begins with a handshake between server and client over TCP. 
+	Afterwards, the server and client is able to exchange data. Google Chrome 4 was the first to fully 
+	support WebSockets in 2010, then others followed along. A year later, IETF website published RFC 6455-
+	The WebSocket Protocol.</p>
     <h3>Analyses of Websockets</h3>
     <p>Ivan: I believe that websockets are</p>
     <p>Jessica: I believe that websockets are</p>
+    <p><u>Daryl Susilo</u></p> <p>With the ever growing need of faster technology and better user interaction, Websockets makes it easier for programmers to fulfill these needs. Without needing to create a new connection everytime a request is being made from the page to the server, the user is able to ineract with a page that is effecient and user friendly. This happens because the page is having a fluid back and forth communication with the server. Having to always establish a connection from the page to the server, will not only require work as a programmer but slower the processing speed of the page.</p>
 
     <h3>Resource References:</h3>
     <ul>
-        <li></li>
+        <li>
+	https://medium.com/@wk_26361/the-history-and-usage-of-websockets-f865eff0d624</li>
+	<li>https://ably.com/topic/websockets</li>
+	<li>https://hackernoon.com/everything-you-ever-wanted-to-know-about-websockets-literally-a05f3643299</li>
     </ul>
     <h3>Other Suggested References:</h3>
     <ul>
