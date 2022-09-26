@@ -15,11 +15,11 @@ Build the application:
      if port says LISTENING, it is an open port to use
      current port is 5040, change it to an open port if application is not running because port is busy
 #### open terminal
-   ##### cd server/
-            ###### install package.json and websocket
-           ###### npm init -y
-           ###### npm install ws
-          ######  npm install express
-          ######  nodemon install
+   ##### cd Advanced Project/server/
+   ##### run commands: (install package.json and websocket)
+            npm init -y
+            npm install ws
+            npm install express
+            nodemon install
 
 
