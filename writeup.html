@@ -24,12 +24,12 @@
         </li>
         <li><a href="#h_2">Learning outcomes</a>
         </li>
-        <li><a  href="#h_3">Step-by-step learning activities</a></li>
+        <li><a  href="#h_3">Step-by-step Learning Activities</a></li>
         <li><a  href="#h_4">Summary of the History</a></li>
         <li><a  href="#h_5">Analyses of Websockets</a></li>
-        <li><a  href="#h_6">Implementation of Websockets</a></li>
-        <li><a  href="#h_7">Youtube videos</a></li>
-        <li><a  href="#h_8">Final questions</a></li>
+        <li><a  href="#h_6">Implementation of Websockets in Our Demo</a></li>
+        <li><a  href="#h_7">Youtube Videos</a></li>
+        <li><a  href="#h_8">Final Questions</a></li>
         <li><a  href="#h_9">Resource References</a></li>
         <li><a  href="#h_10">Resource List</a></li>
 
@@ -112,21 +112,21 @@
       <h2 id="h_5">Analyses of Websockets</h2>
       <p>
         The decision of whether to use websocket or HTTP connections can one way be determined by the differences between websocket and HTTP protocols. The HTTP protocol is a one-way client-server communication, or unidirectional. On the other hand, a WebSocket connection establishes a persistent two-way, or bidirectional, connection between the client and the server which consists of a handshake between the client and the server with the data transfer. As mentioned earlier, an HTTP connection will be closed right after a request/response is sent through the connection – this means that whenever the client and the server want to continue their previous conversation, they will need to repeatedly open and end the connection as well as keep track of the conversation state to maintain a “persistent” conversation. This can become a real hassle with lots of overheads just to maintain the same conversation between the client and the server.
+        
         <p>
-        We believe that WebSockets are best for an application that has multiple clients to its server and keeps persistent conversations between the server and the clients. The protocol is especially helpful when it comes to applications that implements a "fat server" model where the clients need a fast reaction time to the changes happened on the server and thus require the server to update the clients continuously. It also makes more sense when the communications are more frequent and have smaller payloads because otherwise it would require and waste more resources to keep the conversations persistent.
-      </p>
-        <p>
-        One of the other negative aspects of using a WebSocket is that it isn't supported by all the web browsers and it does not support edge caching. When you choose to implement the WebSocket protocol for your application, you should
-         consider that the protocol lacks flexibility in termns of . The other thing about websockets is that they are not designed
-         with a high level of security. It won't really protect your clients or the server. It all really comes down to what you are
-         trying to send through the TCP layer. If the data is fairly small and you are trying to make it show up across multiple devices,
-         then a websocket protocol might be the right solution. The good thing about websockets is that they are a real-time application.
+        On the other hand, one of the other negative aspects of using a WebSocket is that it isn't supported by all the web browsers and it does not support edge caching. When you choose to implement the WebSocket protocol for your application, you should
+         consider that the protocol lacks flexibility in terms of the application security implementation. The WebSocket protocol is not designed
+         for applications that require higher levels of security due to its nature of having persitent communications between the server and the clients. According to Bright Security, there are 8 major security vulnerabilities in the WebSocket protocol: DoS attacks, lack of client authentication, unencrypted TCP channels, input data attacks, data masking, authorization/authentication, tunneling and sniffing attacks. Since the protocol consumes resources to keep conversations alive, it is more susceptible to get be exhausted by a higher number of client server comminications during a DoS attack. Moreover, because the handshake process of the WebSocket protocol does not require client authentication from the server, the conversation can be attach by cross-site WebSocket hijacks and thus leads to input data attacks from cross-site scripting.          The good thing about websockets is that they are a real-time application.
          This means that the data actually loads and is sent rather quickly across devices. The protocol has also been standardized by
           the IETF(Internet Engineering Task Force) and the W3C(World Wide Web Consortium). Another advatange of using websocket protocol
           is that it can be used for cross origin communication which is communication across different domains, schemes and ports. The 
           protocol is also good about sending messages that aren't too heavy for the system to handle. 
         </p>
-          <p>To conclude, the Websocket protocol brings greater advantages for smaller programs and applications. It works efficiently when the application
+
+          <p>
+          We believe that WebSockets are best for an application that has multiple clients to its server and keeps persistent conversations between the server and the clients. The protocol is especially helpful when it comes to applications that implements a "fat server" model where the clients need a fast reaction time to the changes happened on the server and thus require the server to update the clients continuously. It also makes more sense when the communications are more frequent and have smaller payloads because otherwise it would require and waste more resources to keep the conversations persistent.
+        </p>
+          <p>To conclude, the Websocket protocol brings more advantages for smaller applications. It works efficiently when the application
           has a server and client interaction. The communication between the server and client also has to be a two-way communication for 
           this protocol to be ideal. The application would also ideally need to prioritize cross origin communication and also for
           cross platform compatibility. The cross platform compatibility would need to be for web, desktops and mobile devices. Now
@@ -136,8 +136,8 @@
           The arrangemnt of the different types of networks will become too complex for the websocket protocol to handle. The protocol
           is also not fit to handle the implementation of a firewall. The websocket protocol is also not very friendly with kernel configurations.
           Additionally, when it comes to performing load tests on the application, the websocket protocol is most likely going to disappoint
-          the developers with how little it can handle. Therefore, if an application is implemented using a websocket protocol it is better
-          that the application stays small forever or the problems mentioned earlier will only get worse with more users and more data.
+          the developers with how little it can handle. Therefore, if an application is implemented using a websocket protocol, it is better
+          that the application stays at the smaller scale or the problems mentioned above will only get worse with more users and larger request/response payloads.
         </p>
       <h2 id="h_6">Implementation of Websockets in our demo</h2>
       <p>        To implement the WebSocket protocol to our demo application, we made a html
