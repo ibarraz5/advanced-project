@@ -27,9 +27,9 @@
         <li><a  href="#h_3">Step-by-step learning activities</a></li>
         <li><a  href="#h_4">Summary of the History</a></li>
         <li><a  href="#h_5">Analyses of Websockets</a></li>
-        <li><a  href="#h_6">Implementation of Websockets</a></li>
-        <li><a  href="#h_7">Youtube videos</a></li>
-        <li><a  href="#h_8">Final questions</a></li>
+        <li><a  href="#h_6">Implementation of Websockets in Our Demo</a></li>
+        <li><a  href="#h_7">Youtube Videos</a></li>
+        <li><a  href="#h_8">Final Questions</a></li>
         <li><a  href="#h_9">Resource References</a></li>
         <li><a  href="#h_10">Resource List</a></li>
 
@@ -112,7 +112,31 @@
         with the correlated response, and once the response is sent back to the client from the server the connection is actually closed.
         So essentially what is happening with each HTTP request is that connection is getting re-established between the client and the
         server. And every single time the server sends the response, the connection ends between the two. </p>
+    
       <h2 id="h_5">Analyses of Websockets</h2>
+    <p>        The decision of whether to use websocket or HTTP connections can one way be determined by the differences between websocket and HTTP protocols. 
+        The HTTP protocol is a one-way client-server communication, or unidirectional. On the other hand, a WebSocket connection establishes a persistent two-way, 
+        or bidirectional, connection between the client and the server which consists of a handshake between the client and the server with the data transfer. 
+        As mentioned earlier, an HTTP connection will be closed right after a request/response is sent through the connection – this means that whenever the client 
+        and the server want to continue their previous conversation, they will need to repeatedly open and end the connection as well as keep track of the 
+        conversation state to maintain a “persistent” conversation. This can become a real hassle with lots of overheads just to maintain the same conversation 
+        between the client and the server.
+</p>
+            <p>
+        On the other hand, one of the other negative aspects of using a WebSocket is that it isn't supported by all the web browsers and it does not support edge caching. When you choose to implement the WebSocket protocol for your application, you should
+         consider that the protocol lacks flexibility in terms of the application security implementation. The WebSocket protocol is not designed
+         for applications that require higher levels of security due to its nature of having persitent communications between the server and the clients. According to Bright Security, there are 8 major security vulnerabilities in the WebSocket protocol: DoS attacks, lack of client authentication, unencrypted TCP channels, input data attacks, data masking, authorization/authentication, tunneling and sniffing attacks. Since the protocol consumes resources to keep conversations alive, it is more susceptible to get be exhausted by a higher number of client server comminications during a DoS attack. Moreover, because the handshake process of the WebSocket protocol does not require client authentication from the server, the conversation can be attach by cross-site WebSocket hijacks and thus leads to input data attacks from cross-site scripting.          The good thing about websockets is that they are a real-time application.
+         This means that the data actually loads and is sent rather quickly across devices. The protocol has also been standardized by
+          the IETF(Internet Engineering Task Force) and the W3C(World Wide Web Consortium). Another advatange of using websocket protocol
+          is that it can be used for cross origin communication which is communication across different domains, schemes and ports. The 
+          protocol is also good about sending messages that aren't too heavy for the system to handle. 
+        </p>
+              <p>
+          We believe that WebSockets are best for an application that has multiple clients to its server and keeps persistent conversations between the server and 
+          the clients. The protocol is especially helpful when it comes to applications that implements a "fat server" model where the clients need a fast reaction 
+          time to the changes happened on the server and thus require the server to update the clients continuously. It also makes more sense when the communications 
+          are more frequent and have smaller payloads because otherwise it would require and waste more resources to keep the conversations persistent.
+        </p>
       <p>
         We believe that WebSockets are best for an application that has multiple users. It doesn't make sense to implement it on an application 
         that is for single users. They are especially helpful when it comes to applications that have server-side heavy logic 
@@ -144,6 +168,7 @@
           the developers with how little it can handle. Therefore, if an application is implemented using a websocket protocol it is better
           that the application stays small forever or the problems mentioned earlier will only get worse with more users and more data.
         </p>
+    
       <h2 id="h_6">Implementation of Websockets</h2>
       <p>        The way that we decided to implement the websocket protocol includes making an html
         file that works as the user interface for our chatroom. We have created 2 separate folders, one for the client and the
@@ -167,6 +192,7 @@
         command nodemon index.js. This runs the server so now just open the port that the application is using with the http link.
         For this application we are using port 5040 so the link is http://localhost:5040/. You can also open the link using an
         incognito window to open the application as a new user. </p>
+    
         <h2 id="h_7">Youtube video</h2>
         <ul>
           <li><a href="">Code Walkthrough video</a></li>
@@ -187,7 +213,10 @@
           <li><a href="https://en.wikipedia.org/wiki/WebSocket#:~:text=11%20External%20links-,History,the%20protocol%20known%20as%20WebSocket.">https://en.wikipedia.org/wiki/WebSocket#:~:text=11%20External%20links-,History,the%20protocol%20known%20as%20WebSocket.</a></li>
           <li><a href="https://developers.google.com/speed/libraries">https://developers.google.com/speed/libraries</a></li>
           <li><a href="https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/">https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/</a></li>
-      </ul>
+          <li><a href="https://blogs.windows.com/windowsdeveloper/2016/03/14/when-to-use-a-http-call-instead-of-a-websocket-or-http-2-0/#:~:text=WebSockets%20allow%20for%20a%20higher,each%20message%20sent%20and%20received.&text=When%20a%20client%20wants%20ongoing,are%20generally%20a%20good%20fit./">https://blogs.windows.com/windowsdeveloper/2016/03/14/when-to-use-a-http-call-instead-of-a-websocket-or-http-2-0/#:~:text=WebSockets%20allow%20for%20a%20higher,each%20message%20sent%20and%20received.&text=When%20a%20client%20wants%20ongoing,are%20generally%20a%20good%20fit./</a></li>
+          <li><a href="https://brightsec.com/blog/websocket-security-top-vulnerabilities/#most-common-vulnerabilities/">https://brightsec.com/blog/websocket-security-top-vulnerabilities/#most-common-vulnerabilities/</a></li>
+          <li><a href="https://web.dev/websockets-basics/">https://web.dev/websockets-basics/</a></li>
+    </ul>
       <h2 id="h_10">Resource List:</h2>
       <ul>
           <p>Recommendations: If you are new to programming, we recommend that you first visit the w3schools link below.
@@ -208,7 +237,13 @@
           <li><a href="https://playcode.io/html5">HTML playground!</a></li>
           <li><a href="https://jsfiddle.net/">Javascript, HTML, CSS playground!</a></li>
           <li><a href="https://code.visualstudio.com/download">visual Studio Code</a></li>
-      </ul>
+               <p>Recommendations: The following resources are great for leanring different web-based technologies, they include detailed explanations as well as 
+                   simple and easy to understand examples to demostrate the concepts. 
+          </p>
+          <li><a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a></li>
+          <li><a href="https://www.tutorialspoint.com/">https://www.tutorialspoint.com/</a></li>
+          <li><a href="https://web.dev/">https://web.dev/</a></li>
+    </ul>
 
  
 </body>
