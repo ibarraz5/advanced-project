@@ -36,15 +36,18 @@
       </ol>
       <h2 id="h_2">Learning outcomes: </h2>
       <p>
-        After completing this tutorial, the student will have a better understanding of what websockets are and see a demonstration
-        of them in use. The student will also be able to write a single page html site. The student will see what css, html 
-        and javascript are. The student will also learn how to implement an application that is able to run on their webrowser
-        using a local port. The students will also learn the basic idea of websockets and html. They will learn the history,
-        benefits, challenges, and implementation. The best way that a student will get the most out of this tutorial is by following
-        the step-step guide accurately. Make sure that you are watching the video, reading all of this webpage's content, and taking 
-        the quiz. All of the quizzes answers can be found reading the material provided to you in this webpage. It is also important
-        that the student actually takes the time to write their notes and please look up anywords you are unfamiliar with that
-        were not explained during this tutorial.
+        <p>
+          a.  Describe the fundamentals of a WebSocket and how they help establish the communication between client and server
+        </p>
+        <p>
+          b. Distinguish the differences between HTTP and WebSocket protocols 
+        </p>
+        <p>
+          c.  Understand the basic protocol for establishing a WebSocket connection and apply software engineering principles to it
+        </p>
+        <p>
+          d.  Demonstrate the ability to apply WebSocket principles to real world problems
+        </p>
       </p>
 
       <h2 id="h_3">Step-by-step learning activities:</h2>
@@ -106,23 +109,15 @@
         both of them are communications protocols that are used for client and server communication. 
         </p>  
       </p>
-      <p>The HTTP protocol is actually 
-        only unidirectional, this means that the client send a request and the server sends a response. This is different from websockets
-        because here the communication is bidirectional. In HTTP protocol, the client sends a request, the request is then paired up
-        with the correlated response, and once the response is sent back to the client from the server the connection is actually closed.
-        So essentially what is happening with each HTTP request is that connection is getting re-established between the client and the
-        server. And every single time the server sends the response, the connection ends between the two. </p>
       <h2 id="h_5">Analyses of Websockets</h2>
       <p>
-        We believe that WebSockets are best for an application that has multiple users. It doesn't make sense to implement it on an application 
-        that is for single users. They are especially helpful when it comes to applications that have server-side heavy logic 
-        and clients are just users that send requests. It is a protocol that is ideal for two-way communications and it sends 
-        and receives data faster than other protocols. It is also usable on many platforms like mobile, desktop, and web. 
-        There are some negative aspects to using websockets and one of them is that it isn't supported by all the web browsers.
-         It also doesn’t support support edge caching. If the application doesn’t really need communicating, the websocket protocol can 
-         actually make things more difficult. This may seem obvious but if you don't require a websocket protocol for your application,
-         don't implement it in your program. When you are choosing to use a websocket for your application, you should certainly
-         consider that the protocol is not as flexible as you think. The other thing about websockets is that they are not designed
+        The decision of whether to use websocket or HTTP connections can one way be determined by the differences between websocket and HTTP protocols. The HTTP protocol is a one-way client-server communication, or unidirectional. On the other hand, a WebSocket connection establishes a persistent two-way, or bidirectional, connection between the client and the server which consists of a handshake between the client and the server with the data transfer. As mentioned earlier, an HTTP connection will be closed right after a request/response is sent through the connection – this means that whenever the client and the server want to continue their previous conversation, they will need to repeatedly open and end the connection as well as keep track of the conversation state to maintain a “persistent” conversation. This can become a real hassle with lots of overheads just to maintain the same conversation between the client and the server.
+        <p>
+        We believe that WebSockets are best for an application that has multiple clients to its server and keeps persistent conversations between the server and the clients. The protocol is especially helpful when it comes to applications that implements a "fat server" model where the clients need a fast reaction time to the changes happened on the server and thus require the server to update the clients continuously. It also makes more sense when the communications are more frequent and have smaller payloads because otherwise it would require and waste more resources to keep the conversations persistent.
+      </p>
+        <p>
+        One of the other negative aspects of using a WebSocket is that it isn't supported by all the web browsers and it does not support edge caching. When you choose to implement the WebSocket protocol for your application, you should
+         consider that the protocol lacks flexibility in termns of . The other thing about websockets is that they are not designed
          with a high level of security. It won't really protect your clients or the server. It all really comes down to what you are
          trying to send through the TCP layer. If the data is fairly small and you are trying to make it show up across multiple devices,
          then a websocket protocol might be the right solution. The good thing about websockets is that they are a real-time application.
@@ -131,7 +126,7 @@
           is that it can be used for cross origin communication which is communication across different domains, schemes and ports. The 
           protocol is also good about sending messages that aren't too heavy for the system to handle. 
         </p>
-          <p>To conclude, the Websocket protocol can be efficient for smaller programs and applications. It works accurately when the application
+          <p>To conclude, the Websocket protocol brings greater advantages for smaller programs and applications. It works efficiently when the application
           has a server and client interaction. The communication between the server and client also has to be a two-way communication for 
           this protocol to be ideal. The application would also ideally need to prioritize cross origin communication and also for
           cross platform compatibility. The cross platform compatibility would need to be for web, desktops and mobile devices. Now
@@ -144,19 +139,17 @@
           the developers with how little it can handle. Therefore, if an application is implemented using a websocket protocol it is better
           that the application stays small forever or the problems mentioned earlier will only get worse with more users and more data.
         </p>
-      <h2 id="h_6">Implementation of Websockets</h2>
-      <p>        The way that we decided to implement the websocket protocol includes making an html
-        file that works as the user interface for our chatroom. We have created 2 separate folders, one for the client and the
-        other for the server.In the client folder we have the html file mentioned earlier and it has its own javascript file as well.
-        All we are doing is breaking up the elements using div tags and this way we can display different pages to the users.
-        The users first have to enter their name to enter the application. Once the user enters a name that is not a null value
-        and shows that the user is now live. It also adds the user to the users table and then allows the user to start chatting.
-        They can send their messages, see messages sent from other users, see when a user is typing and they can all clear the chat
-        at any point. In order for the application to run we must first check the local ports on the computer being used. In order to
-        do that we must first open the command prompt as the administrator by right clicking on it choose administrator. Then run the
-        command netstat -ab to see the local ports and identifying which of the following ports are open to use for the application.
-        We determined that the best port to use for our websocket application was port 5040. </p>
-      <p>The ports that say LISTENING are open
+      <h2 id="h_6">Implementation of Websockets in our demo</h2>
+      <p>        To implement the WebSocket protocol to our demo application, we made a html
+        file that works as the client with a user interface for our chatroom. We have created 2 separate folders, one for the client and the
+        other for the server.In the client folder we have the html file that incorporates a javascript file as well.
+        What we did was breaking up the elements using div tags and this way we can display different pages to the users.
+        A users first has to enter their name to connect to the application server. Once the user enters a name that is not a null value
+        it will show that the user is now live. It also adds the user to the users table and then allows the user to start chatting.
+        Through the application server, users can both send messages and receive messages from other users. They can also see when a user is typing as well as clear the chat
+        at any point.
+      </p>
+      <p>In order for the application to run we must first check the local ports on the computer being used. In order to do that we must first open the command prompt as the administrator by right clicking on it choose administrator. Then run the command netstat -ab to see the local ports and identifying which of the following ports are open to use for the application. We determined that the best port to use for our websocket application was port 5040. The ports that say LISTENING are open
         for use. Then once the application files are finished we shall open a terminal under the folder that the project is saved under.
         In this case the command to get the cd SER421/Advanced Project/server/. It is very important that the terminal is open under
         the folder named server. Also, the best IDE or Integrated development environement, is Visual Studio Code. Once again when you
