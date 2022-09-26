@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Self Practice</title>
+        <style>
+          a{
+            font-size: 1.5em;
+          }
+          p{
+            font-size: 0.8em;
+          }
+          li{
+            font-size: 1.4em;
+          }
+          h1,h2{
+            background-color: lightblue;
+          }
+    
+        </style>
+    </head>
+    <body>
+        <h1 id="h_1">Create A Basic Websocket Server and Client Connection</h1>
+        <h2>Creating The Server</h2>
+        <ol>
+        <li><u>Create a javascript file named "server.js" inside an empty folder called "WebSock"</u></li>
+        <li><u>Declare these constant vraibles in "server.js" which will be needed to create the server:</u>
+        <p>const express = require('express');</p>
+        <p>const WebSocket = require('ws');</p>
+        <p>const app = express();</p>
+        <p>const server = require('http').createServer(app);</p></li>  
+        <li><u>Create and declare a websocket server:</u>
+            <p>const wsServer = new WebSocket.Server({ server: server });</p>
+        </li>
+        <li>
+            <u>Create an eventhandler for the server so that it can recieve a message and send a message:</u>
+            <p>wsServer.on('connection', function connection(ws){</p>
+            <p>console.log('A new Client connected!');</p>
+            <p>ws.send("Welcome Client!");</p>
+            <p>ws.on('message', function incoming(message){</p>
+            <p>console.log('recieved: %s', message);});});</p>
+        </li>
+    <li>
+        <u>Make sure that the websocketr server app is able to recieve requests and response:</u>
+        <p>app.get('/',(req,res) => res.send("Hello"));</p></li>
+    <li><u>Declare what port the server is listening to:</u>
+            <p>server.listen(3000, ()=> console.log("Listening on port 3000"));</p>
+    </li>
+<li><u>You finished creating the Websocket Server!</u></li></ol>
+    <h2>Creating The Client</h2>
+    <ol>
+        <li><u>Create and html file named "index.html" inside the folder "WebSock"</u></li>
+        <li><u>Inside the script tag in the html file declare a new WebSocket that have access to the same port that the server is listening 
+            to:</u>
+        <p>const client = new WebSocket('ws://localhost:3000');</p></li>
+    <li><u>Inside the script tag, declare an event handler for when the client opens:</u>
+        <p> client.addEventListener('open', function(event){</p>
+        <p>console.log('Connected to server');</p>
+        <p>client.send('Hello from client');});</p>
+    </li>
+    <li><u>Inside the script tag, declare an event handler for when the client recieves a message from the server</u>
+    <p> client.addEventListener('message', function(event){</p>
+    <p>console.log('Message from server:', event.data);});</p></li>
+    <li><u>You finished creating the client!</u></li>
+    </ol>
+    <h2>Connect The Client To Server</h2>
+    <ol><li><u>Open the terminal inside the "WebSock" folder</u></li>
+        <li><u>Install the json package by running this command:</u>
+        <p>npm install -y</p></li>
+        <li><u>Install the Websocket package by running this command:</u>
+            <p>npm install ws</p></li>
+        <li><u>Install the express package by running this command:</u>
+            <p>npm install express</p></li>
+        <li><u>Run the server by running this command:</u>
+            <p>node server.js</p></li>
+        <li><u>Open the html file with Google Chrome</u></li>
+        <li><u>You have made a Websocket server and client connection!</u></li></ol>
+        <p><u><a href = "writeup.html">Go back to write up</a></u></p>
+    </body>
+</html>
