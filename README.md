@@ -11,9 +11,9 @@
 Build the application:
 #### check for local open port
    ##### run cmd prompt as admin
-    ##### netstat -ab
-    ##### if port says LISTENING, it is an open port to use
-    ##### current port is 5040, change it to an open port if application is not running because port is busy
+     netstat -ab
+     if port says LISTENING, it is an open port to use
+     current port is 5040, change it to an open port if application is not running because port is busy
 #### open terminal
    ##### cd server/
             ###### install package.json and websocket
