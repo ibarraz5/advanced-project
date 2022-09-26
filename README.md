@@ -1,14 +1,8 @@
 ## How to build and run the application, commands:
 
-#### cd Advanced Project/server/
-#### nodemon index.js  
-#### //after running server the client can connect by:
- go to http://localhost:5040/ on your webrowser 
-#### //REFRESH PAGE IN BROWSER
-#### you can also open an incognito webrowser window and open http link there so you can connect as a different user
-#### //IF PORT ERROR, check open ports for your computer and change the port number in the code from 5040 to another port #
+### Important! Build the application first. Then execute run commands. 
 
-Build the application:
+### Build the application:
 #### check for local open port
    ##### run cmd prompt as admin
      netstat -ab
@@ -21,5 +15,16 @@ Build the application:
             npm install ws
             npm install express
             nodemon install
+
+### Run the application:
+#### cd Advanced Project/server/
+#### nodemon index.js  
+#### //after running server the client can connect by:
+ go to http://localhost:5040/ on your webrowser 
+#### //REFRESH PAGE IN BROWSER
+#### you can also open an incognito webrowser window and open http link there so you can connect as a different user
+#### //IF PORT ERROR, check open ports for your computer and change the port number in the code from 5040 to another port #
+
+
 
 
