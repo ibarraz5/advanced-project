@@ -15,6 +15,8 @@
             npm install ws
             npm install express
             nodemon install
+            //after this the server is running and the application can be accessed on local port 5040. However, we shall close the command line and run it with the commands to run the application. Close the command line with:
+            ctrl+C
 
 ### Run the application:
 #### cd Advanced Project/server/
