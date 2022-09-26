@@ -49,8 +49,14 @@
 
       <h2 id="h_3">Step-by-step learning activities:</h2>
       <ol>
+        <li><p>Read the introduction to what a Websocket is:</p> 
+          <a href="whatisws.html">Click here to start</a>
+        </li>
         <li><p>Watch our Code Walkthrough video:</p> 
           <a href="">Code Walkthrough</a>
+        </li>
+        <li><p>Create your own basic WebSocket server and client connection:</p> 
+          <a href="createws.html">Create your Websocket</a>
         </li>
         <li><p>Read this webpage in its entirety</p> </li>
         <li><p>Take notes, any ideas you had and something new you learned</p> </li>
@@ -88,52 +94,7 @@
           Afterwards, the server and client is able to exchange data. Google Chrome 4 was the first to fully 
           support WebSockets in 2010, then others followed along. A year later, IETF website published RFC 6455-
           The WebSocket Protocol.</p>
-      <p>Websockets were first called a TCPConnection since they were TCP based socket APIs. A websocket is
-        a protocol for computer communication that has the ability to provide a complete duplex communication channel.
-        A duplex communication system is one that allows for communication in both directions and allows for such to happen
-        simultaneously.
-        What also makes this protocol different is that it utilizes a single TCP connection to communicate. The webocket protocol
-        is different from the HTTP protocol. However they are also similar in the aspect of layers because both of these protocols
-        can be found at layer 7 and they do work with the TCP that is found at layer 4. These layers that are mentioned are part of
-        the OSI (Open systems interconnection) model. This model describes a total of 7 levers which are the Application, Presentation,
-        Session, Transport, Network, Data link and Physical layers. So the websocket and HTTP protocols are part of the application
-        layer and the TCP is part of the transport layer. 
-        The client is able to send a request to the server and the server sends a
-        handshake or confirmation. Websockets allow for server side push. This protocol also allows for an interaction between the client's
-        web browser/application and the web server. An advantage to using the websocket protocol over many other protocols is that it 
-        doesn't need a ton of overhead and data in order to work properly. In that sense, it is better than using a protocol like the 
-        HTTP polling protocol. The websocket is also better than others because it can easily send data between the server and client
-        in real time. This process was standardized by the design of the websocket itself. Since websockets are usually used in ports
-        443 and 80, it is simple to use it in environements that block certain elements using a firewall. It is also important to mention
-        that similar protocols to the websocket have been achieved in less formal ways. This means that the protocol wasn't formally documented
-        a group and the protocols weren't really standardized. Similar protocols to the websocket are the Comet application and 
-        the Adobe Flash Player. Both of these actually allow a two-way client and server communication. Before the websocket came about
-        developers would use comet channels through port 80 but the protocol was too complex to work with small data efficiently.
-        That is where the websocket comes in and provides an efficient protocol for small data programs. 
-        <p>
-        The webocket is not all that secure
-        but the websocket secure or wss is designed to be more secure. However, the wss is still not perfect. A regular websocket protocol
-        uses unencrypted connections while th wss protocol makes use of encrypted connections.
-         It is also supported by the web browser Google chrome,
-        Firefox, Microsoft edge, Internet Explorer, Safari and Opera.
-        Use socket.close() to close a websocket. The RFC standard released standard #6455 which says that the websocket was designedto work on
-        ports 443 and 80. It was also made to be of support to HTTP. 
-        A websocket can be used for social chatrooms, multiplayer games, team projects and 
-        other activities that involve a group. In this tutorial you will be see it implemented as a chatroom. The websocket protocol
-        was standardized by the IETF back in 2011. This protocol is actually different than the HTTP. The name of websocket was
-        first used by Ian Hickson and Michael Carter and in 2009 Google chrome was the first browser to support the protocol.
-        Then in 2010 the protocol was moved from the W3C to the WHATWG group. The WHATWG group is the Web HyperText application
-        Technology Working Group. It was also founded by people from Apple, Mozilla, Opera and others. It is important to remember
-        that not all of the web browsers out there actually support websockets. HTTP and websockets are similar in the sense that
-        both of them are communications protocols that are used for client and server communication. 
-        </p>  
-      </p>
-      <p>The HTTP protocol is actually 
-        only unidirectional, this means that the client send a request and the server sends a response. This is different from websockets
-        because here the communication is bidirectional. In HTTP protocol, the client sends a request, the request is then paired up
-        with the correlated response, and once the response is sent back to the client from the server the connection is actually closed.
-        So essentially what is happening with each HTTP request is that connection is getting re-established between the client and the
-        server. And every single time the server sends the response, the connection ends between the two. </p>
+
       
       <h2 id="h_5">Analyses of Websockets</h2>
       <p>        The decision of whether to use websocket or HTTP connections can one way be determined by the differences between websocket and HTTP protocols. 
