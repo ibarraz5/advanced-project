@@ -32,8 +32,8 @@
         <li><a  href="#h_8">Final Questions</a></li>
         <li><a  href="#h_9">Resource References</a></li>
         <li><a  href="#h_10">Resource List</a></li>
-
       </ol>
+
       <h2 id="h_2">Learning outcomes: </h2>
       <p>
         After completing this tutorial, the student will have a better understanding of what websockets are and see a demonstration
@@ -66,6 +66,28 @@
 
       </ol>
       <h2 id="h_4">Summary of the History</h2>
+      <p>	The Web was first created using HTTP protocol. Back then, there were only 4 steps in the interaction 
+        between the user and the web. It included, opening the connection, sending a request, receiving a 
+        response and closing the connection. The most notable background communication feature was first 
+        seen in 1999 with the Microsoft XMLHTTP. This object made it possible to send a request to a server and 
+        receive a response without having to reload the page. Allowing the user’s experience to be 
+        uninterrupted. However, the high frequency request-response cycles led to more problems as the cycles 
+        required new connections all the time.</p>
+        <p>XMLHTTP became XMLHttpRequest as it gets adopted by other 
+          browsers than Internet Explorer and was used to solve the request-response cycle problem. 
+          Developers decided to modify and test different techniques with XMLHttpRequest that would recreate real-time back and forth 
+          communication of the web and server. Long-polling was the most popular of these techniques involving 
+          opening an XMLHttpRequest connection to the server and only closing the connection once 
+          communication is no longer needed. However, even the Long Polling technique was not enough as it 
+          still used the same setup and frequent request-response cycles similar to XMLHttpRequest as it is trying 
+          to repurpose something it wasn’t designed to do. A solution with proper TCP/IP style capabilities in a 
+          web environment was needed. </p> 
+          <p>In 2008, Michael Carter and Ian Hickson created a new standard for web 
+          communication through the collaboration on IRC and M3C mailing lists called WebSockets. The 
+          communication made by WebSockets begins with a handshake between server and client over TCP. 
+          Afterwards, the server and client is able to exchange data. Google Chrome 4 was the first to fully 
+          support WebSockets in 2010, then others followed along. A year later, IETF website published RFC 6455-
+          The WebSocket Protocol.</p>
       <p>Websockets were first called a TCPConnection since they were TCP based socket APIs. A websocket is
         a protocol for computer communication that has the ability to provide a complete duplex communication channel.
         A duplex communication system is one that allows for communication in both directions and allows for such to happen
@@ -112,16 +134,16 @@
         with the correlated response, and once the response is sent back to the client from the server the connection is actually closed.
         So essentially what is happening with each HTTP request is that connection is getting re-established between the client and the
         server. And every single time the server sends the response, the connection ends between the two. </p>
-    
+      
       <h2 id="h_5">Analyses of Websockets</h2>
-    <p>        The decision of whether to use websocket or HTTP connections can one way be determined by the differences between websocket and HTTP protocols. 
+      <p>        The decision of whether to use websocket or HTTP connections can one way be determined by the differences between websocket and HTTP protocols. 
         The HTTP protocol is a one-way client-server communication, or unidirectional. On the other hand, a WebSocket connection establishes a persistent two-way, 
         or bidirectional, connection between the client and the server which consists of a handshake between the client and the server with the data transfer. 
         As mentioned earlier, an HTTP connection will be closed right after a request/response is sent through the connection – this means that whenever the client 
         and the server want to continue their previous conversation, they will need to repeatedly open and end the connection as well as keep track of the 
         conversation state to maintain a “persistent” conversation. This can become a real hassle with lots of overheads just to maintain the same conversation 
         between the client and the server.
-</p>
+      </p>
             <p>
         On the other hand, one of the other negative aspects of using a WebSocket is that it isn't supported by all the web browsers and it does not support edge caching. When you choose to implement the WebSocket protocol for your application, you should
          consider that the protocol lacks flexibility in terms of the application security implementation. The WebSocket protocol is not designed
@@ -130,12 +152,6 @@
           the IETF(Internet Engineering Task Force) and the W3C(World Wide Web Consortium). Another advatange of using websocket protocol
           is that it can be used for cross origin communication which is communication across different domains, schemes and ports. The 
           protocol is also good about sending messages that aren't too heavy for the system to handle. 
-        </p>
-              <p>
-          We believe that WebSockets are best for an application that has multiple clients to its server and keeps persistent conversations between the server and 
-          the clients. The protocol is especially helpful when it comes to applications that implements a "fat server" model where the clients need a fast reaction 
-          time to the changes happened on the server and thus require the server to update the clients continuously. It also makes more sense when the communications 
-          are more frequent and have smaller payloads because otherwise it would require and waste more resources to keep the conversations persistent.
         </p>
       <p>
         We believe that WebSockets are best for an application that has multiple users. It doesn't make sense to implement it on an application 
@@ -155,6 +171,13 @@
           is that it can be used for cross origin communication which is communication across different domains, schemes and ports. The 
           protocol is also good about sending messages that aren't too heavy for the system to handle. 
         </p>
+        <p>With the ever growing need of faster technology and better user interaction, Websockets makes it easier 
+          for programmers to fulfill these needs. Without needing to create a new connection everytime a request is being 
+          made from the page to the server, the user is able to ineract with a page that is effecient and user friendly. 
+          This happens because the page is having a fluid back and forth communication with the server. Having to always 
+          establish a connection from the page to the server, will not only require work as a programmer but slower the 
+          processing speed of the page.</p>
+
           <p>To conclude, the Websocket protocol can be efficient for smaller programs and applications. It works accurately when the application
           has a server and client interaction. The communication between the server and client also has to be a two-way communication for 
           this protocol to be ideal. The application would also ideally need to prioritize cross origin communication and also for
@@ -168,7 +191,7 @@
           the developers with how little it can handle. Therefore, if an application is implemented using a websocket protocol it is better
           that the application stays small forever or the problems mentioned earlier will only get worse with more users and more data.
         </p>
-    
+
       <h2 id="h_6">Implementation of Websockets</h2>
       <p>        The way that we decided to implement the websocket protocol includes making an html
         file that works as the user interface for our chatroom. We have created 2 separate folders, one for the client and the
@@ -192,11 +215,12 @@
         command nodemon index.js. This runs the server so now just open the port that the application is using with the http link.
         For this application we are using port 5040 so the link is http://localhost:5040/. You can also open the link using an
         incognito window to open the application as a new user. </p>
-    
+        
         <h2 id="h_7">Youtube video</h2>
         <ul>
           <li><a href="">Code Walkthrough video</a></li>
         </ul>
+
         <h2 id="h_8">Final questions</h2>
         <p>In your notepad (online or physical), answer these questions</p>
         <ol>
@@ -208,15 +232,20 @@
           <li><p>Is a websocket ideal for small or large programs?</p></li>
           <li><p>What are the 3 platforms that websockets can be used for?</p></li>
         </ol>
+
       <h2 id="h_9">Resource References:</h2>
       <ul>
           <li><a href="https://en.wikipedia.org/wiki/WebSocket#:~:text=11%20External%20links-,History,the%20protocol%20known%20as%20WebSocket.">https://en.wikipedia.org/wiki/WebSocket#:~:text=11%20External%20links-,History,the%20protocol%20known%20as%20WebSocket.</a></li>
           <li><a href="https://developers.google.com/speed/libraries">https://developers.google.com/speed/libraries</a></li>
           <li><a href="https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/">https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/</a></li>
+          <li><a href="https://medium.com/@wk_26361/the-history-and-usage-of-websockets-f865eff0d624">https://medium.com/@wk_26361/the-history-and-usage-of-websockets-f865eff0d624</a></li>
+        	<li><a href="https://ably.com/topic/websockets">https://ably.com/topic/websockets</a></li>
+	        <li><a href="https://hackernoon.com/everything-you-ever-wanted-to-know-about-websockets-literally-a05f3643299">https://hackernoon.com/everything-you-ever-wanted-to-know-about-websockets-literally-a05f3643299</a></li>
           <li><a href="https://blogs.windows.com/windowsdeveloper/2016/03/14/when-to-use-a-http-call-instead-of-a-websocket-or-http-2-0/#:~:text=WebSockets%20allow%20for%20a%20higher,each%20message%20sent%20and%20received.&text=When%20a%20client%20wants%20ongoing,are%20generally%20a%20good%20fit./">https://blogs.windows.com/windowsdeveloper/2016/03/14/when-to-use-a-http-call-instead-of-a-websocket-or-http-2-0/#:~:text=WebSockets%20allow%20for%20a%20higher,each%20message%20sent%20and%20received.&text=When%20a%20client%20wants%20ongoing,are%20generally%20a%20good%20fit./</a></li>
           <li><a href="https://brightsec.com/blog/websocket-security-top-vulnerabilities/#most-common-vulnerabilities/">https://brightsec.com/blog/websocket-security-top-vulnerabilities/#most-common-vulnerabilities/</a></li>
           <li><a href="https://web.dev/websockets-basics/">https://web.dev/websockets-basics/</a></li>
-    </ul>
+        </ul>
+
       <h2 id="h_10">Resource List:</h2>
       <ul>
           <p>Recommendations: If you are new to programming, we recommend that you first visit the w3schools link below.
@@ -236,14 +265,11 @@
           <li><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
           <li><a href="https://playcode.io/html5">HTML playground!</a></li>
           <li><a href="https://jsfiddle.net/">Javascript, HTML, CSS playground!</a></li>
-          <li><a href="https://code.visualstudio.com/download">visual Studio Code</a></li>
-               <p>Recommendations: The following resources are great for leanring different web-based technologies, they include detailed explanations as well as 
-                   simple and easy to understand examples to demostrate the concepts. 
-          </p>
+          <li><a href="https://code.visualstudio.com/download">Visual Studio Code</a></li>
           <li><a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a></li>
           <li><a href="https://www.tutorialspoint.com/">https://www.tutorialspoint.com/</a></li>
           <li><a href="https://web.dev/">https://web.dev/</a></li>
-    </ul>
+      </ul>
 
  
 </body>
