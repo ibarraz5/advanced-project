@@ -1,7 +1,7 @@
-How to run the application, run commands:
+## How to run the application, run commands:
 
-cd Advanced Project/server/
-nodemon index.js  
+#### cd Advanced Project/server/
+#### nodemon index.js  
 //after running server the client can connect by:
 to open the chat go to http://localhost:5040/ on your webrowser 
 //REFRESH PAGE IN BROWSER
