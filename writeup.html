@@ -106,9 +106,16 @@
         between the client and the server.
       </p>
             <p>
-        On the other hand, one of the other negative aspects of using a WebSocket is that it isn't supported by all the web browsers and it does not support edge caching. When you choose to implement the WebSocket protocol for your application, you should
+        On the other hand, one of the other negative aspects of using a WebSocket is that it isn't supported by all the web browsers and it does not support edge caching. 
+        When you choose to implement the WebSocket protocol for your application, you should
          consider that the protocol lacks flexibility in terms of the application security implementation. The WebSocket protocol is not designed
-         for applications that require higher levels of security due to its nature of having persitent communications between the server and the clients. According to Bright Security, there are 8 major security vulnerabilities in the WebSocket protocol: DoS attacks, lack of client authentication, unencrypted TCP channels, input data attacks, data masking, authorization/authentication, tunneling and sniffing attacks. Since the protocol consumes resources to keep conversations alive, it is more susceptible to get be exhausted by a higher number of client server comminications during a DoS attack. Moreover, because the handshake process of the WebSocket protocol does not require client authentication from the server, the conversation can be attach by cross-site WebSocket hijacks and thus leads to input data attacks from cross-site scripting.          The good thing about websockets is that they are a real-time application.
+         for applications that require higher levels of security due to its nature of having persitent communications between the server and the clients. 
+         According to Bright Security, there are 8 major security vulnerabilities in the WebSocket protocol: DoS attacks, lack of client 
+         authentication, unencrypted TCP channels, input data attacks, data masking, authorization/authentication, tunneling and sniffing attacks. 
+         Since the protocol consumes resources to keep conversations alive, it is more susceptible to get be exhausted by a higher number of client 
+         server comminications during a DoS attack. Moreover, because the handshake process of the WebSocket protocol does not require client 
+         authentication from the server, the conversation can be attach by cross-site WebSocket hijacks and thus leads to input data attacks from 
+         cross-site scripting.          The good thing about websockets is that they are a real-time application.
          This means that the data actually loads and is sent rather quickly across devices. The protocol has also been standardized by
           the IETF(Internet Engineering Task Force) and the W3C(World Wide Web Consortium). Another advatange of using websocket protocol
           is that it can be used for cross origin communication which is communication across different domains, schemes and ports. The 
