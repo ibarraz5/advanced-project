@@ -16,7 +16,7 @@ Build the application:
      current port is 5040, change it to an open port if application is not running because port is busy
 #### open terminal
    ##### cd Advanced Project/server/
-   ##### run commands: (install package.json and websocket)
+   ##### run commands: 
             npm init -y
             npm install ws
             npm install express
